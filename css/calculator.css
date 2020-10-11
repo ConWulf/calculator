@@ -4,4 +4,18 @@
 
 .numButton {
     margin: 5px;
+    width: 10vmin;
+}
+
+.button {
+    margin: 10px;
+}
+
+.button #clear {
+float: left;
+}
+
+.operator {
+    margin: 10px;
+
 }
