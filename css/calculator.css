@@ -11,11 +11,19 @@
     margin: 10px;
 }
 
-.button #clear {
-float: left;
-}
-
 .operator {
     margin: 10px;
+}
 
+#operatorInput {
+    width: 15px;
+}
+
+#input {
+    width: 300px;
+}
+
+#clear {
+    width: 10vmin;
+    margin-left: 5px;
 }
