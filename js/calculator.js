@@ -1,26 +1,60 @@
 "use strict"
 
-let zero = document.getElementById("0").innerHTML;
-let one = document.getElementById("1").innerHTML;
-var two = document.getElementById("2").innerHTML;
-var three = document.getElementById("3").innerHTML;
-var four = document.getElementById("4").innerHTML;
-var five = document.getElementById("5").innerHTML;
-var six = document.getElementById("6").innerHTML;
-var seven = document.getElementById("7").innerHTML;
-var eight = document.getElementById("8").innerHTML;
-var nine = document.getElementById("9").innerHTML;
+let zero = document.getElementById("0");
+let one = document.getElementById("1");
+var two = document.getElementById("2");
+var three = document.getElementById("3");
+var four = document.getElementById("4");
+var five = document.getElementById("5");
+var six = document.getElementById("6");
+var seven = document.getElementById("7");
+var eight = document.getElementById("8");
+var nine = document.getElementById("9");
 
 
 
-window.addEventListener("click", e => {
-    if(e.button === parseFloat(zero)) {
-        document.getElementById("input").value = zero
-    } else if(e.button === parseFloat(one)) {
-        document.getElementById("input").value = one
-    }
-
+zero.addEventListener("click", e => {
+        document.getElementById("input").value = zero.innerHTML;
 });
+
+one.addEventListener("click", e => {
+    document.getElementById("input").value = one.innerHTML;
+});
+
+two.addEventListener("click", e => {
+    document.getElementById("input").value = two.innerHTML;
+});
+
+three.addEventListener("click", e => {
+    document.getElementById("input").value = three.innerHTML;
+});
+
+four.addEventListener("click", e => {
+    document.getElementById("input").value = four.innerHTML;
+});
+
+five.addEventListener("click", e => {
+    document.getElementById("input").value = five.innerHTML;
+});
+
+six.addEventListener("click", e => {
+    document.getElementById("input").value = six.innerHTML;
+});
+
+seven.addEventListener("click", e => {
+    document.getElementById("input").value = seven.innerHTML;
+});
+
+eight.addEventListener("click", e => {
+    document.getElementById("input").value = eight.innerHTML;
+});
+
+nine.addEventListener("click", e => {
+    document.getElementById("input").value = nine.innerHTML;
+});
+
+if ()
+
 
 
 
