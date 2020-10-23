@@ -11,41 +11,60 @@ body, html {
 
 .calculator {
     display: inline-grid;
-    grid-template-rows: 3em 28em 4em ;
-    grid-template-columns: 15em 24em 15em ;
+    margin: auto;
+    background-color: orange;
+    grid-template-rows: 3em 25em 4em ;
+    grid-template-columns: 15em 21em 15em ;
     grid-template-areas: ". inputField ."
                          ". calc-container ."
                           ". operator-container .";
+    grid-gap: 0;
 }
+
 
 main div {
     display: flex;
     width: 100%;
     background-color: black;
-    justify-content: center;
+    /*justify-content: center;*/
 }
 
 main button {
     color: #ababab;
 }
 
-div:nth-child(2) {
-    flex-wrap: wrap;
+
+div:last-child {
     align-items: center;
 }
-
 
 .inputField {
     height: 3em;
     margin: auto;
     position: relative;
     grid-area: inputField;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    border-radius: 1em 1em 0 0;
 }
 
 .inputField input:nth-child(2) {
-    text-align: left;
+    text-align: center;
     width: 100%;
 
+}
+
+.inputField input:nth-child(1)  {
+    border-radius: 1em 0 0 0;
+    max-width: 10em;
+    border-left: 1px solid #ababab;
+}
+
+.inputField input:nth-child(3)  {
+    border-radius: 0 1em 0 0;
+    max-width: 10em;
+    border-right: 1px solid #ababab;
 }
 
 .inputField input {
@@ -53,21 +72,28 @@ div:nth-child(2) {
     text-align: center;
     background-color: #333;
     color: #ababab;
+    /*box-shadow: .5em .5em #ababab inset;*/
+    border-bottom: 1px solid #ababab;
+    border-top: 1px solid #ababab;
+    border-left: none;
+    border-right: none;
 }
 
 .operator {
-    width: 4em;
-    height: 4em;
-    border-radius: 4em;
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
     border: none;
+    background-color: #79798c;
 }
 
 .calculator button:not(.operator){
-    width: 8em;
-    height: 8em;
+    width: 7em;
+    height: 7em;
     border: none;
-    border-radius: 8em;
+    border-radius: 7em;
     background-color: #56566e;
+
 }
 
 .clear-button {
@@ -84,10 +110,18 @@ div:nth-child(2) {
 
 .calc-container {
     grid-area: calc-container;
+    box-shadow: 1em 1em #ababab;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    align-content: space-evenly;
+    justify-content: space-evenly;
 }
 
 .operator-container {
     grid-area: operator-container;
+    box-shadow: 1em 1em #ababab;
+    border-radius: 0 0 1em 1em;
 }
 
 
