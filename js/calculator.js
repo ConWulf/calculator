@@ -3,10 +3,6 @@
 
 
 
-// let plus = document.getElementById("plus");
-// let minus = document.getElementById("minus");
-// let multiply = document.getElementById("multiply");
-// let divide = document.getElementById("divide");
 
 let operatorButton = document.getElementsByClassName("operator");
 let numButton = document.getElementsByClassName("numButton");
@@ -15,6 +11,7 @@ let input2 = document.getElementById("num-input-2");
 let operator = document.getElementById("operator-input");
 let equal = document.getElementById("equals");
 let clear = document.getElementById("clear");
+let sqrt = document.getElementById("sqrt");
 
     function operatorInput () {
         for (let j = 0; j < operatorButton.length; j++) {
@@ -22,6 +19,10 @@ let clear = document.getElementById("clear");
                 operator.value = operatorButton[j].innerHTML;
             })
         }
+        sqrt.addEventListener("click", e => {
+            input1.value = Math.sqrt(input1.value);
+            operator.value = "";
+        })
     }
 
     function equals() {
@@ -47,7 +48,7 @@ let clear = document.getElementById("clear");
             operator.value = "";
         });
     }
-equals();
+
     function clearInput() {
         clear.addEventListener("click", e => {
             input1.value = "";
@@ -56,7 +57,6 @@ equals();
         });
     }
 
-    clearInput();
     function numInput() {
         for (let i = 0; i < numButton.length; i++) {
             numButton[i].addEventListener("click", e => {
@@ -65,10 +65,13 @@ equals();
                 } else if (operator.value.length > 0) {
                     input2.value += numButton[i].innerHTML;
                 }
-                // if (input1.value.length === 0) {
-                //     input1.value = 0;
-                // }
+                if (input1.value.length === 0) {
+                    input1.value = 0;
+                }
             });
+            if (input1.value.length === 16 ) {
+
+            }
         }
     }
 
