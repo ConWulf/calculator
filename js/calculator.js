@@ -1,62 +1,84 @@
+(function () {
 "use strict"
 
-let zero = document.getElementById("0");
-let one = document.getElementById("1");
-var two = document.getElementById("2");
-var three = document.getElementById("3");
-var four = document.getElementById("4");
-var five = document.getElementById("5");
-var six = document.getElementById("6");
-var seven = document.getElementById("7");
-var eight = document.getElementById("8");
-var nine = document.getElementById("9");
 
 
+// let plus = document.getElementById("plus");
+// let minus = document.getElementById("minus");
+// let multiply = document.getElementById("multiply");
+// let divide = document.getElementById("divide");
 
-zero.addEventListener("click", e => {
-        document.getElementById("input").value = zero.innerHTML;
-});
+let operatorButton = document.getElementsByClassName("operator");
+let numButton = document.getElementsByClassName("numButton");
+let input1 = document.getElementById("num-input-1");
+let input2 = document.getElementById("num-input-2");
+let operator = document.getElementById("operator-input");
+let equal = document.getElementById("equals");
+let clear = document.getElementById("clear");
 
-one.addEventListener("click", e => {
-    document.getElementById("input").value = one.innerHTML;
-});
+    function operatorInput () {
+        for (let j = 0; j < operatorButton.length; j++) {
+            operatorButton[j].addEventListener("click", e => {
+                operator.value = operatorButton[j].innerHTML;
+            })
+        }
+    }
 
-two.addEventListener("click", e => {
-    document.getElementById("input").value = two.innerHTML;
-});
+    function equals() {
+        equal.addEventListener("click", e => {
+            switch (operator.value) {
+                case "+":
+                    input1.value = parseFloat(input1.value) + parseFloat(input2.value);
+                    break;
+                case "-":
+                    input1.value = parseFloat(input1.value) - parseFloat(input2.value);
+                    break;
+                case "*":
+                    input1.value = parseFloat(input1.value) * parseFloat(input2.value);
+                    break;
+                case "/":
+                    input1.value = parseFloat(input1.value) / parseFloat(input2.value);
+                    break;
+            }
+            if (input2.value === "0") {
+                input1.value = "Error";
+            }
+            input2.value = "";
+            operator.value = "";
+        });
+    }
+equals();
+    function clearInput() {
+        clear.addEventListener("click", e => {
+            input1.value = "";
+            input2.value = "";
+            operator.value = "";
+        });
+    }
 
-three.addEventListener("click", e => {
-    document.getElementById("input").value = three.innerHTML;
-});
+    clearInput();
+    function numInput() {
+        for (let i = 0; i < numButton.length; i++) {
+            numButton[i].addEventListener("click", e => {
+                if (operator.value.length === 0) {
+                    input1.value += numButton[i].innerHTML;
+                } else if (operator.value.length > 0) {
+                    input2.value += numButton[i].innerHTML;
+                }
+                // if (input1.value.length === 0) {
+                //     input1.value = 0;
+                // }
+            });
+        }
+    }
 
-four.addEventListener("click", e => {
-    document.getElementById("input").value = four.innerHTML;
-});
+    function number() {
+        operatorInput();
+        numInput();
+        equals();
+        clearInput();
+    }
 
-five.addEventListener("click", e => {
-    document.getElementById("input").value = five.innerHTML;
-});
+number();
 
-six.addEventListener("click", e => {
-    document.getElementById("input").value = six.innerHTML;
-});
-
-seven.addEventListener("click", e => {
-    document.getElementById("input").value = seven.innerHTML;
-});
-
-eight.addEventListener("click", e => {
-    document.getElementById("input").value = eight.innerHTML;
-});
-
-nine.addEventListener("click", e => {
-    document.getElementById("input").value = nine.innerHTML;
-});
-
-if ()
-
-
-
-
-
-
+})();

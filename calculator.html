@@ -6,31 +6,34 @@
     <link rel="stylesheet" href="css/calculator.css">
 </head>
 <body>
-<section class="inputField">
-<input type="text" id="input">
-</section>
-<section class="button">
-	<button class="numButton" id="0">0</button>
-	<button class="numButton" id="1">1</button>
-	<button class="numButton" id="2">2</button>
-	<button class="numButton" id="3">3</button>
-		<br>
-	<button class="numButton" id="4">4</button>
-	<button class="numButton" id="5">5</button>
-	<button class="numButton" id="6">6</button>
-	<button class="numButton" id="7">7</button>
-		<br>
-	<button class="numButton" id="8">8</button>
-	<button class="numButton" id="9">9</button>
-	<button id="clear">C</button>
-    <div class="operator">
-        <button class="operator">+</button>
-        <button class="operator">-</button>
-        <button class="operator">=</button>
-        <button class="operator">*</button>
-        <button class="operator">/</button>
+
+<main class="calculator">
+	<div class="inputField">
+		<input type="text" id="num-input-1" readonly>
+		<input type="text" id="operator-input" readonly>
+		<input type="text" id="num-input-2" readonly>
 	</div>
-</section>
+	<div class="calc-container">
+		<button type="button" class="numButton zero" id="0">0</button>
+		<button type="button" class="numButton one" id="1">1</button>
+		<button type="button" class="numButton two" id="2">2</button>
+		<button type="button" class="numButton three" id="3">3</button>
+		<button type="button" class="numButton four" id="4">4</button>
+		<button type="button" class="numButton five" id="5">5</button>
+		<button type="button" class="numButton six" id="6">6</button>
+		<button type="button" class="numButton seven" id="7">7</button>
+		<button type="button" class="numButton eight" id="8">8</button>
+		<button type="button" class="numButton nine" id="9">9</button>
+		<button type="button" class="clear-button" id="clear">C</button>
+		<button type="button" class="equal" id="equals">=</button>
+	</div>
+	<div class="operator-container">
+		<button type="button" class="operator" id="plus">+</button>
+		<button type="button" class="operator" id="minus">-</button>
+		<button type="button" class="operator" id="multiply">*</button>
+		<button type="button" class="operator" id="divide">/</button>
+	</div>
+</main>
 
 
 
