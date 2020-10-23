@@ -27,21 +27,26 @@ let sqrt = document.getElementById("sqrt");
 
     function equals() {
         equal.addEventListener("click", e => {
-            switch (operator.value) {
-                case "+":
-                    input1.value = parseFloat(input1.value) + parseFloat(input2.value);
-                    break;
-                case "-":
-                    input1.value = parseFloat(input1.value) - parseFloat(input2.value);
-                    break;
-                case "*":
-                    input1.value = parseFloat(input1.value) * parseFloat(input2.value);
-                    break;
-                case "/":
-                    input1.value = parseFloat(input1.value) / parseFloat(input2.value);
-                    break;
+            if (input1.value === "" && input2.value !== "") {
+                input1.value = input2.value;
+            } else if (input2.value === "" && input1.value !== "") {
+                input2.value = input1.value;
+            } else {
+                switch (operator.value) {
+                    case "+":
+                        input1.value = parseFloat(input1.value) + parseFloat(input2.value);
+                        break;
+                    case "-":
+                        input1.value = parseFloat(input1.value) - parseFloat(input2.value);
+                        break;
+                    case "*":
+                        input1.value = parseFloat(input1.value) * parseFloat(input2.value);
+                        break;
+                    case "/":
+                        input1.value = parseFloat(input1.value) / parseFloat(input2.value);
+                }
             }
-            if (input2.value === "0") {
+            if (input2.value === "0" && operator.value === "/") {
                 input1.value = "Error";
             }
             input2.value = "";
@@ -65,13 +70,7 @@ let sqrt = document.getElementById("sqrt");
                 } else if (operator.value.length > 0) {
                     input2.value += numButton[i].innerHTML;
                 }
-                if (input1.value.length === 0) {
-                    input1.value = 0;
-                }
             });
-            if (input1.value.length === 16 ) {
-
-            }
         }
     }
 
