@@ -27,10 +27,12 @@ let sqrt = document.getElementById("sqrt");
 
     function equals() {
         equal.addEventListener("click", e => {
-            if (input1.value === "" && input2.value !== "") {
+            if (input1.value === "") {
                 input1.value = input2.value;
-            } else if (input2.value === "" && input1.value !== "") {
-                input2.value = input1.value;
+            } else if (input2.value === "") {
+                input2.value = 0;
+            } else if (input2.value === "" && input1.value === "") {
+                input1.value = 0;
             } else {
                 switch (operator.value) {
                     case "+":
